@@ -1,6 +1,6 @@
 {
   "name": "@grammeaway/pi-provider-sakana-fugu",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Sakana Fugu provider extension for the Pi agentic harness (OpenAI-compatible, /login support)",
   "type": "module",
   "keywords": ["pi", "pi-extension", "pi-provider", "sakana", "fugu", "llm"],
