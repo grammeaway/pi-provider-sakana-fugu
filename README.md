@@ -15,7 +15,7 @@ is Sakana's recommended path for tooling/agents; Chat Completions also works).
 # global extension
 git clone <this> ~/.pi/agent/extensions/sakana-fugu
 # or, once published:
-npm i -g pi-provider-sakana-fugu   # then reference via -e / extensions dir
+npm i -g @grammeaway/pi-provider-sakana-fugu   # then reference via -e / extensions dir
 ```
 
 Or load directly for a quick try:
