@@ -11,17 +11,14 @@ is Sakana's recommended path for tooling/agents; Chat Completions also works).
 
 ## Install
 
-```sh
-# global extension
-git clone <this> ~/.pi/agent/extensions/sakana-fugu
-# or, once published:
-npm i -g @grammeaway/pi-provider-sakana-fugu   # then reference via -e / extensions dir
+```bash
+pi install npm:@grammeaway/pi-provider-sakana-fugu
 ```
 
-Or load directly for a quick try:
+To try it without permanently installing:
 
-```sh
-pi -e ./index.ts
+```bash
+pi -e npm:@grammeaway/pi-provider-sakana-fugu
 ```
 
 ## Login
