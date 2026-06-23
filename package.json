@@ -1,9 +1,9 @@
 {
   "name": "@grammeaway/pi-provider-sakana-fugu",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Sakana Fugu provider extension for the Pi agentic harness (OpenAI-compatible, /login support)",
   "type": "module",
-  "keywords": ["pi", "pi-extension", "pi-provider", "sakana", "fugu", "llm"],
+  "keywords": ["pi", "pi-extension", "pi-provider", "sakana", "fugu", "llm", "pi-package"],
   "license": "MIT",
   "author": "Victor Gram Thomsen <victor@guramusoftware.com>",
   "repository": { "type": "git", "url": "git+https://github.com/grammeaway/pi-provider-sakana-fugu" },
