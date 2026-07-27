@@ -34,27 +34,27 @@ const THINKING: Record<string, string | null> = {
 // <=272K context). Fugu's price is a blended rate that varies with the active
 // agent pool and isn't published, so it reuses Ultra's numbers as an upper
 // bound. Edit cost{} if Sakana publishes exact Fugu pricing.
+// All Fugu variants share the same shape/pricing; only id/name differ.
+// Versioned IDs verified live against GET /v1/models on 2026-07-27:
+//   fugu, fugu-ultra (floating alias -> latest), fugu-ultra-20260615,
+//   fugu-ultra-v1.0, fugu-ultra-v1.1
+const fugu = (id: string, name: string) => ({
+	id,
+	name,
+	reasoning: true,
+	thinkingLevelMap: THINKING,
+	input: ["text", "image"] as ("text" | "image")[],
+	cost: { input: 5, output: 30, cacheRead: 0.5, cacheWrite: 0 },
+	contextWindow: 1000000,
+	maxTokens: 128000,
+});
+
 const MODELS = [
-	{
-		id: "fugu",
-		name: "Fugu",
-		reasoning: true,
-		thinkingLevelMap: THINKING,
-		input: ["text", "image"] as ("text" | "image")[],
-		cost: { input: 5, output: 30, cacheRead: 0.5, cacheWrite: 0 },
-		contextWindow: 1000000,
-		maxTokens: 128000,
-	},
-	{
-		id: "fugu-ultra",
-		name: "Fugu Ultra",
-		reasoning: true,
-		thinkingLevelMap: THINKING,
-		input: ["text", "image"] as ("text" | "image")[],
-		cost: { input: 5, output: 30, cacheRead: 0.5, cacheWrite: 0 },
-		contextWindow: 1000000,
-		maxTokens: 128000,
-	},
+	fugu("fugu", "Fugu"),
+	fugu("fugu-ultra", "Fugu Ultra"), // floating alias — tracks latest Ultra
+	fugu("fugu-ultra-v1.1", "Fugu Ultra v1.1"), // pinned, newest as of 2026-07-27
+	fugu("fugu-ultra-v1.0", "Fugu Ultra v1.0"), // pinned
+	fugu("fugu-ultra-20260615", "Fugu Ultra 2026-06-15"), // legacy dated snapshot
 ];
 
 export default function (pi: ExtensionAPI) {
